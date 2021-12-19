@@ -10,6 +10,8 @@ fun main() {
     println(a.pizzaIsGreat())
 
     println(extendString("LEE", 26))
+
+    println(calculateGrade(455))
 }
 
 val square : (Int) -> (Int) = {
@@ -31,4 +33,15 @@ val pizzaIsGreat : String.() -> String = {
 fun extendString(name : String, age : Int) : String {
     val introduceMyself : String.(Int) -> String = { "I am ${this} and ${it} years old" }
     return name.introduceMyself(age)
+}
+
+
+// 람다의 Return
+val calculateGrade : (Int) -> String = {
+    when (it) {
+        in 0..40 -> "fail"
+        in 41..70 -> "pass"
+        in 71..100 -> "perfect"
+        else -> "Error"
+    }
 }
