@@ -1,19 +1,46 @@
 package me.gicheol.kotlin_example
 
 fun main() {
+    forAndWhile()
 }
 
-// List, MutableList
-// List 는 Immutable 이지만 Array, ArrayList 는 Mutable 이다
-fun array() {
-    val array = arrayOf(1, 2, 3)
-    val list = listOf(1, 2, 3)
-    val array2 = arrayOf(1, 2L, "3")
-    val list2 = listOf(1, 2L, "3")
+fun forAndWhile() {
+    val users = arrayListOf("LEE", "GICHEOL", "ABC")
 
-    array[0] = 3
+    for (user in users) {
+        println("user = ${user}")
+    }
 
-    val arrayList = arrayListOf<Int>()
-    arrayList.add(10)
-    arrayList.add(20)
+    for (i in 0..2) {
+        println("users[${i}] = ${users[i]}")
+    }
+
+    var sum = 0
+    for (i in 1..10) {
+        sum += i
+    }
+
+    println("sum = ${sum}")
+
+    // 1 ~ 99 까지
+    sum = 0
+    for (i in 1 until 100) {
+        sum += i
+    }
+
+    println("sum = ${sum}")
+
+    for (i in 10 downTo 1) {
+        println("i = ${i}")
+    }
+
+    for ((index, name) in users.withIndex()) {
+        println("${index+1}번째 = ${name}")
+    }
+
+    var index = 0
+    while(index < 10) {
+        println("index = ${index}")
+        index++
+    }
 }
