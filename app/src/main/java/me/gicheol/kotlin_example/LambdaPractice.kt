@@ -12,6 +12,16 @@ fun main() {
     println(extendString("LEE", 26))
 
     println(calculateGrade(455))
+
+
+    val lambda = {
+        number : Double -> number == 5.2345
+    }
+
+    println(invokeLambda(lambda))
+    println(invokeLambda({ it > 3.22 }))
+    println(invokeLambda { it > 3.22 })
+
 }
 
 val square : (Int) -> (Int) = {
@@ -44,4 +54,9 @@ val calculateGrade : (Int) -> String = {
         in 71..100 -> "perfect"
         else -> "Error"
     }
+}
+
+// 람다를 표현하는 여러가지 방법
+fun invokeLambda(lambda : (Double) -> Boolean) : Boolean {
+    return lambda(5.2345);
 }
